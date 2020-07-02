@@ -18,7 +18,7 @@
               style="margin-top: 1rem;"
               href="#taw-4"
               class="button taw-primary"
-              >Browse games</a
+              >Follow</a
             >
           </div>
           <p class="is-text-gray-dark">Scroll for more info</p>
@@ -40,8 +40,11 @@
         alt=""
       />
       <div class="container is-relative">
-        <div style="text-align: center;" class="cols justify-center">
-          <div class="col full is-text-dark align-center">
+        <div
+          style="text-align: center;"
+          class="cols align-center justify-center"
+        >
+          <div class="col full is-text-dark align-center justify-center">
             <h3 class="title is-small">Just take a walk</h3>
             <p class="is-text-dark">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
@@ -56,7 +59,7 @@
     <section id="taw-3" class="section fullheight">
       <img
         class="decorative mobile-hidden"
-        style="width: 10rem; top: -10rem; left: 25%;"
+        style="width: 10rem; top: -15rem; left: 25%;"
         src="~/assets/images/taw/fallingplatform.png"
         alt=""
       />
@@ -67,7 +70,7 @@
         alt=""
       />
       <div class="container is-relative">
-        <div class="cols justify-center">
+        <div class="cols justify-center align-center">
           <div class="col third is-text-dark">
             <figure class="image-wrapper">
               <img
@@ -76,7 +79,7 @@
                 alt="game screenshot"
               />
             </figure>
-            <h3 class="subtitle is-medium spaced">Just take a walk</h3>
+            <h3 class="subtitle is-medium spaced">Explore</h3>
             <p class="is-marginless">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
               tenetur illum earum itaque inventore neque reprehenderit. Animi
@@ -92,7 +95,7 @@
                 alt="game screenshot"
               />
             </figure>
-            <h3 class="subtitle is-medium spaced">Just take a walk</h3>
+            <h3 class="subtitle is-medium spaced">Puzzles</h3>
             <p class="is-marginless">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
               tenetur illum earum itaque inventore neque reprehenderit. Animi
@@ -108,7 +111,7 @@
                 alt="game screenshot"
               />
             </figure>
-            <h3 class="subtitle is-medium spaced">Just take a walk</h3>
+            <h3 class="subtitle is-medium spaced">Story</h3>
             <p class="is-marginless">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
               tenetur illum earum itaque inventore neque reprehenderit. Animi
@@ -119,7 +122,11 @@
         </div>
       </div>
     </section>
-    <section style="height: 50vh;" id="taw-4" class="section jumbo">
+    <section
+      style="min-height: 60vh;"
+      id="taw-4"
+      class="section jumbo justify-center"
+    >
       <!-- <div
         style="top: 0; left: 15%; width: 20rem;"
         class="decorative mobile-hidden is-flex"
@@ -216,21 +223,45 @@ export default {
     url("~assets/images/taw/bg05dark.png") center top / 100% 70% no-repeat;
 }
 #taw-3 {
-  .cols {
-    padding: 30rem 0 40rem;
-    @include break($tablet) {
-      padding: initial;
-    }
-  }
+  // .cols {
+  //   padding: 30rem 0 40rem;
+  //   @include break($tablet) {
+  //     padding: initial;
+  //   }
+  // }
   // height: 150vh;
-  background: url("~assets/images/taw/bg03.png") center 70% / 100% 100%
-    no-repeat;
 
-  @include break($desktop) {
-    background: url("~assets/images/taw/bg03.png") center 70% / 100% 90%
-        no-repeat,
-      url("~assets/images/taw/boardsign.png") right 18% top 0 / 20% no-repeat;
+  &:before {
+    content: "";
+    position: relative;
+    top: -5rem;
+    width: 100%;
+    height: 10rem;
+    background: url("~assets/images/taw/bg03topt.png") center / 100% 80%
+      no-repeat;
   }
+  &:after {
+    content: "";
+    position: relative;
+    bottom: -5rem;
+    width: 100%;
+    height: 10rem;
+    z-index: 3;
+    background: url("~assets/images/taw/bg03bottomt.png") center / 100% 80%
+      no-repeat;
+  }
+  // background: url("~assets/images/taw/bg03pattern.png") center center / contain
+  //   repeat;
+  background: url("~assets/images/taw/bg03pattern.png") left top / 100% repeat,
+    linear-gradient(90deg, #eceef8, #fdfeff);
+  background-blend-mode: saturation;
+  z-index: 1;
+  margin: 5rem 0;
+  // @include break($desktop) {
+  //   background: url("~assets/images/taw/bg03.png") center 70% / 100% 90%
+  //       no-repeat,
+  //     url("~assets/images/taw/boardsign.png") right 18% top 0 / 20% no-repeat;
+  // }
   // url("~assets/images/taw/bg05dark.png") center top / 100% 70vh no-repeat;
 }
 #taw-4 {
