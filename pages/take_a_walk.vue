@@ -26,7 +26,7 @@
         </div>
       </div>
     </section>
-    <section id="taw-2" class="section is-flex fullheight">
+    <section id="taw-2" class="section is-flex justify-center fullheight">
       <img
         class="decorative mobile-hidden"
         style="width: 10rem; top: 20rem; left: 15%;"
@@ -39,23 +39,26 @@
         src="~/assets/images/taw/spritesheet2.png"
         alt=""
       />
-      <div class="container is-relative">
-        <div
-          style="text-align: center;"
-          class="cols align-center justify-center"
-        >
-          <div class="col full is-text-dark align-center justify-center">
-            <h3 class="title is-small">Just take a walk</h3>
-            <p class="is-text-dark">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
-              tenetur illum earum itaque inventore neque reprehenderit. Animi
-              porro fugit, laudantium unde vel ullam, iure ratione eos at
-              tempora mollitia soluta?
-            </p>
+      <div id="taw-2-1">
+        <div class="container is-relative">
+          <div
+            style="text-align: center;"
+            class="cols align-center justify-center"
+          >
+            <div class="col full is-text-dark align-center justify-center">
+              <h3 class="title is-small">Just take a walk</h3>
+              <p class="is-text-dark">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
+                tenetur illum earum itaque inventore neque reprehenderit. Animi
+                porro fugit, laudantium unde vel ullam, iure ratione eos at
+                tempora mollitia soluta?
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </section>
+    <!-- <section style="height: 20vh;"></section> -->
     <section id="taw-3" class="section fullheight">
       <img
         class="decorative mobile-hidden"
@@ -217,9 +220,35 @@ export default {
   color: $gray-dark;
 }
 #taw-2 {
-  // height: 150vh;
-  background: url("~assets/images/taw/bg04.png") center 15vh / 100% 80%
-      no-repeat,
+  #taw-2-1 {
+    display: flex;
+    flex-direction: column;
+    // &:before {
+    //   content: "";
+    //   position: relative;
+    //   top: -2rem;
+    //   width: 100%;
+    //   height: 50rem;
+    //   background: url("~assets/images/taw/bg04top.png") center / 100% 80%
+    //     no-repeat;
+    // }
+    // &:after {
+    //   content: "";
+    //   position: relative;
+    //   bottom: -2rem;
+    //   width: 100%;
+    //   height: 50rem;
+    //   z-index: 3;
+    //   background: url("~assets/images/taw/bg04bottom.png") center / 100% 80%
+    //     no-repeat;
+    // }
+    // background: url("~assets/images/taw/bg03pattern.png") left top / 100% repeat,
+    //   linear-gradient(90deg, #eceef8, #fdfeff);
+    // background-blend-mode: saturation;
+    z-index: 1;
+  }
+  margin: 5rem 0 10rem;
+  background: url("~assets/images/taw/bg04.png") center 60% / 100% 80% no-repeat,
     url("~assets/images/taw/bg05dark.png") center top / 100% 70% no-repeat;
 }
 #taw-3 {
@@ -243,7 +272,7 @@ export default {
   &:after {
     content: "";
     position: relative;
-    bottom: -5rem;
+    bottom: -6rem;
     width: 100%;
     height: 10rem;
     z-index: 3;
