@@ -1,0 +1,295 @@
+// @import "normalize-scss";
+// @import "./_theme.scss";
+@include normalize();
+
+#app {
+  position: relative;
+  padding-top: 3rem;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  // background-color: $gray-dark;
+  font-family: $font-primary;
+  color: $white-ish;
+  overflow-x: hidden;
+}
+
+section {
+  position: relative;
+  color: $white-ish;
+  display: flex;
+  &.jumbo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &.landing {
+      background: linear-gradient(
+            180deg,
+            rgba(44, 44, 44, 0) 30%,
+            rgba(44, 44, 44, 1) 100%
+          )
+          no-repeat,
+        url("~assets/images/herobcg.png") center / cover no-repeat;
+    }
+    .jumbo-content {
+      display: flex;
+      position: relative;
+      width: 100%;
+      @include break($tablet) {
+        width: auto;
+      }
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $white-ish;
+  transition: all $tspeed;
+  &:hover {
+    transition: all $tspeed;
+    text-decoration: none !important;
+    color: $gray-darker1;
+  }
+}
+
+p {
+  max-width: 30rem;
+}
+
+#nav {
+  background-color: fade-out($gray-darker, 0.3);
+  position: fixed;
+  z-index: 20;
+  height: 3rem;
+  top: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  .fixer {
+    display: block;
+    width: 100%;
+    margin: auto;
+    height: 100%;
+  }
+  .nav-content {
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto auto;
+    .nav-item {
+      white-space: nowrap;
+      padding: $spacing1;
+      color: $white-ish;
+      transition: all $tspeed;
+      font-weight: $bold;
+      &:hover {
+        transition: all $tspeed;
+        color: darken($white-ish, 15%);
+      }
+    }
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+footer {
+  position: relative;
+  width: 100%;
+  bottom: 0;
+  background-color: $gray-darker2;
+  .footer-content {
+    color: $gray-light;
+    padding: $spacing1 0;
+    display: grid;
+    grid-template-columns: auto;
+    @include break($mobile) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    align-items: center;
+    .footer-item {
+      a {
+        color: $gray-light;
+        text-decoration: underline;
+      }
+      padding: $spacing0;
+      justify-self: center;
+      @include break($mobile) {
+        &:first-child {
+          justify-self: start;
+        }
+        &:last-child {
+          justify-self: end;
+        }
+      }
+    }
+  }
+}
+
+hr {
+  border-color: $gray;
+  border-style: solid;
+}
+
+p {
+  color: $gray-lighter;
+  line-height: 1.4;
+}
+
+figure {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.image-wrapper {
+  img {
+    display: block;
+    width: 100%;
+
+    object-fit: cover;
+    &.is-thumbnail {
+      height: 15rem;
+      @include break($tablet) {
+        height: 10rem;
+      }
+    }
+  }
+}
+
+.section {
+  &.fullheight {
+    min-height: 100vh;
+  }
+}
+
+.container {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  padding: $spacing1;
+  width: auto;
+  @include break($desktop) {
+    max-width: 960px;
+  }
+
+  margin: auto;
+  > .box {
+    margin: 0 -$spacing1;
+  }
+}
+.cols {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  @include break($tablet) {
+    flex-direction: row;
+  }
+  &.sectioned {
+    width: auto;
+    padding: $spacing1 0;
+    @include break($tablet) {
+      padding: $spacing2;
+    }
+  }
+  .col {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: $spacing1;
+    &.full {
+      width: auto;
+    }
+
+    &.half {
+      width: auto;
+      @include break($tablet) {
+        width: 50%;
+      }
+    }
+    &.third {
+      width: auto;
+      @include break($tablet) {
+        width: 33.333%;
+      }
+    }
+  }
+  @include break($tablet) {
+    flex-direction: row;
+  }
+}
+
+.button {
+  @extend .text-bold;
+  position: relative;
+  display: inline-block;
+  padding: $spacing1 * 0.8 $spacing1 * 2;
+  background-color: $flavor1;
+  color: $white-ish;
+  text-decoration: none;
+  transition: all $tspeed;
+  &:hover {
+    background-color: darken($flavor1, 5%);
+    transition: all $tspeed;
+    &::after {
+      transition: all $tspeed;
+      content: "";
+      background-color: darken($gray, 20%);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 5px;
+      top: 5;
+      z-index: -2;
+    }
+  }
+  &.taw-primary {
+    background-color: $flavor2;
+    color: $white-ish;
+  }
+}
+
+.card-header {
+  display: inline-flex;
+  .title {
+    margin: 0;
+    font-size: 1.2em;
+  }
+  .status {
+    text-transform: uppercase;
+    margin-left: $spacing0;
+    color: $gray-light1;
+    font-size: 0.7em;
+  }
+}
+
+.horizontal-list {
+  margin: 0;
+  padding: 0;
+  > li {
+    padding: 0.7rem;
+    display: inline;
+  }
+}
+
+.link-row {
+  display: flex;
+  margin: $spacing0 0;
+}
+
+.box {
+  background-color: $gray-darker;
+  box-shadow: 0 4 10 $gray-dark;
+  &.light {
+    background-color: $gray-darker1;
+  }
+}

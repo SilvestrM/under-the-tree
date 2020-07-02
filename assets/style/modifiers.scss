@@ -1,0 +1,95 @@
+//colors
+.is-text-dark {
+  color: $gray-darker;
+}
+
+.is-text-gray-dark {
+  color: $gray-darker1;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.text-bold {
+  font-weight: $bold;
+}
+
+.is-flex {
+  display: flex !important;
+}
+
+.is-relative {
+  position: relative;
+}
+
+.is-marginless {
+  margin: 0;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+.decorative {
+  position: absolute;
+  z-index: 10;
+}
+
+.mobile-hidden {
+  display: none;
+  @include break($desktop) {
+    display: unset;
+  }
+  @media screen and (max-height: 780px) {
+    display: none;
+  }
+}
+
+.justify-center {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.align-center {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  font-size: 1em;
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+  font-weight: bold;
+  &.is-big {
+    font-size: 3em;
+  }
+  &.is-medium {
+    font-size: 2em;
+  }
+  &.is-small {
+    font-size: 1.5em;
+  }
+  &.spaced {
+    margin: $spacing1 0;
+  }
+}
+.subtitle {
+  margin: 0.5em 0;
+  font-size: 1em;
+  font-weight: semibold;
+  + .title {
+    margin-bottom: 0.1em;
+  }
+  &.is-big {
+    font-size: 1.8em;
+  }
+  &.is-medium {
+    font-size: 1.5em;
+  }
+  &.is-small {
+    font-size: 1.2em;
+  }
+  &.spaced {
+    margin: $spacing1 0;
+  }
+}

@@ -1,0 +1,45 @@
+// @import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+// colors $
+$gray-dark: #2c2c2c;
+$gray-darker: #2f2f2f;
+$gray-light: #c6c6c6;
+$gray-light1: #848484;
+$gray: #505050;
+$gray-darker1: #4a4a4a;
+$gray-darker2: #353535;
+$gray-lighter: #afafaf;
+
+$white-ish: #f0f0f0;
+
+$flavor1: #b49441;
+$flavor2: #4a4a4a;
+
+// $flavor-map: ('primary': $primary, 'dark': $dark, 'dark-gray': $dark-gray, 'background': $color);
+
+$flavor: $flavor1;
+// $flavor1-dark: darken($flavor1, 30%);
+
+$font-primary: "PT Sans", sans-serif;
+$bold: bold;
+$nomra: normal;
+
+//sizes
+$spacing0: 0.5rem;
+$spacing1: 1rem;
+$spacing2: 2rem;
+
+//animations
+$tspeed: 100ms;
+
+//media
+$mobile: 576;
+$tablet: 768;
+$desktop: 1024;
+$widescreen: 1200;
+
+@mixin break($breakpoint) {
+  @media only screen and (min-width: $breakpoint + px) {
+    @content;
+  }
+}
