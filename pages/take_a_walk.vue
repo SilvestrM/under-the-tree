@@ -16,13 +16,18 @@
           <div>
             <a
               style="margin-top: 1rem;"
-              href="#taw-4"
+              href=""
+              @click.prevent="scrollTo('taw-4')"
               class="button taw-primary"
               >Follow</a
             >
           </div>
           <p class="is-text-gray-dark">Scroll for more info</p>
-          <img src="~/assets/images/taw/mouse-scroll.svg" alt="" />
+          <img
+            id="mousescroll-icon"
+            src="~/assets/images/taw/mouse-scroll.svg"
+            alt=""
+          />
         </div>
       </div>
     </section>
@@ -60,6 +65,12 @@
     </section>
     <!-- <section style="height: 20vh;"></section> -->
     <section id="taw-3" class="section fullheight">
+      <img
+        class="decorative mobile-hidden"
+        style="width: 15rem; top: -10rem; right: 20%;"
+        src="~/assets/images/taw/boardsign.png"
+        alt=""
+      />
       <img
         class="decorative mobile-hidden"
         style="width: 10rem; top: -15rem; left: 25%;"
@@ -126,7 +137,7 @@
       </div>
     </section>
     <section
-      style="min-height: 60vh;"
+      style="min-height: 70vh;"
       id="taw-4"
       class="section jumbo justify-center"
     >
@@ -157,6 +168,35 @@
         src="~/assets/images/taw/bus_complete.png"
         alt=""
       />
+
+      <!-- <svg
+        id="bus-path-wrapper"
+        class="decorative mobile-hidden"
+        width="100%"
+        height="100%"
+        viewBox="0 0 1190 765"
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xml:space="preserve"
+        xmlns:serif="http://www.serif.com/"
+        style="
+          fill-rule: evenodd;
+          clip-rule: evenodd;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+          stroke-miterlimit: 1.5;
+        "
+      >
+        <g transform="matrix(1,0,0,1,-324.737,-105.818)">
+          <path
+            id="bus-path"
+            d="M325.237,246.972C718.557,51.521 1044.34,78.374 1337.09,213.977C1563.52,386.809 1545.02,559.64 1436.07,732.471C1356.05,824.231 1207.1,873.772 1030.7,869.165"
+            style="fill: none; stroke: none;"
+          />
+        </g>
+      </svg> -->
+
       <div class="jumbo-content is-text-gray-dark">
         <h1 class="title is-medium is-text-gray-dark">Take a walk</h1>
         <h2 class="subtitle is-small is-text-gray-dark italic">
@@ -194,6 +234,7 @@ import IconifyIcon from "@iconify/vue"
 import bxlTwitch from "@iconify/icons-bx/bxl-twitch"
 import bxlInstagram from "@iconify/icons-bx/bxl-instagram"
 import bxlPlayStore from "@iconify/icons-bx/bxl-play-store"
+
 export default {
   components: {
     IconifyIcon,
@@ -207,9 +248,160 @@ export default {
       },
     }
   },
+  methods: {
+    scrollTo(destination) {
+      this.$gsap.to(window, {
+        duration: 1.5,
+        ease: "expo",
+        scrollTo: {
+          y: "#" + destination,
+          offsetY: 70,
+        },
+      })
+    },
+  },
+  mounted() {
+    const mouseIconScaling = this.$gsap.to("#mousescroll-icon", {
+      duration: 0.86,
+      scale: 1.1,
+      yoyo: true,
+      repeat: -1,
+    })
+    mouseIconScaling.play()
+    this.$ScrollTrigger.create({
+      trigger: "#mousescroll-icon",
+      start: "top center",
+      // end: "bottom bottom",
+      // once: true,
+      onToggle: ({ isActive }) => {
+        if (isActive) {
+          mouseIconScaling.pause()
+        } else {
+          mouseIconScaling.resume()
+        }
+      },
+    })
+
+    // Bus animation
+    this.$gsap.set("#bus", {
+      transformOrigin: "50% 50%",
+      zIndex: 1,
+    })
+    const flyAnimation = this.$gsap.to("#bus", {
+      duration: 0.86,
+      relative: true,
+      translateY: "-=10",
+      yoyo: true,
+      repeat: -1,
+    })
+
+    const busFlightTimeline = this.$gsap.timeline({
+      scrollTrigger: {
+        trigger: "#taw-4",
+        start: "center 60%",
+        once: true,
+        onLeaveBack: ({ isActive }) => {
+          if (isActive) busFlightTimeline.pause()
+        },
+        onEnter: ({ isActive }) => {
+          if (isActive) busFlightTimeline.resume()
+        },
+      },
+      onStart() {
+        flyAnimation.kill()
+      },
+    })
+    // busFlightTimeline.to("#bus", {
+    //   duration: 0.86,
+    //   relative: true,
+    //   translateY: "-=10",
+    //   yoyo: true,
+    //   repeat: 1,
+    // })
+
+    busFlightTimeline.to("#bus", {
+      duration: 3,
+      ease: "power1",
+      scale: 0.8,
+      // immediateRender: true,
+      motionPath: {
+        // relative: true,
+        alignOrigin: [0.5, 0.5],
+        curviness: 2,
+        // type: "cubic",
+        path: [
+          { x: 0, y: 0 },
+          { x: 1000, y: 50 },
+        ],
+        // align: "#bus-path",
+      },
+    })
+    busFlightTimeline.to("#bus", {
+      delay: -1,
+      duration: 1,
+      ease: "slow",
+      // immediateRender: true,
+      keyframes: [
+        { rotationY: -180, duration: 0.8 },
+        { rotationZ: -20, delay: -0.25 },
+      ],
+    })
+    busFlightTimeline.to("#bus", {
+      delay: -0.5,
+      duration: 2,
+      scale: 1,
+      ease: "sine",
+      // immediateRender: true,
+      motionPath: {
+        // relative: true,
+        alignOrigin: [0.5, 0.5],
+        curviness: 1,
+        // type: "cubic",
+        path: [
+          { x: 1000, y: 400 },
+          { x: 800, y: 500 },
+        ],
+      },
+    })
+    busFlightTimeline.to("#bus", {
+      duration: 0.86,
+      relative: true,
+      translateY: "-=10",
+      yoyo: true,
+      repeat: -1,
+    })
+
+    // const busFlight = this.$gsap.to("#bus", {
+    //   scrollTrigger: {
+    //     trigger: "#taw-4",
+    //     start: "center 60%",
+    //     once: true,
+    //   },
+    //   duration: 5,
+    //   ease: "sine",
+    //   // immediateRender: true,
+    //   motionPath: {
+    //     // relative: true,
+    //     alignOrigin: [0.5, 0.5],
+    //     curviness: 1.5,
+    //     // type: "cubic",
+    //     path: [
+    //       { x: 0, y: 0 },
+    //       { x: 800, y: 0, rotation: 180 },
+    //       { x: 900, y: 400, rotation: 180, delay: 0.5 },
+    //       { x: 800, y: 600 },
+    //     ],
+    //     // align: "#bus-path",
+    //   },
+    // })
+    // console.log(busFlight)
+  },
 }
 </script>
 <style lang="scss">
+// body {
+//   @include scrollbars(0.75rem, $gray-darker1, $gray-lighter);
+// }
 #app {
   background-color: $gray-lighter;
 }
@@ -218,6 +410,8 @@ export default {
 .wrapper {
   background-color: $gray-lighter;
   color: $gray-dark;
+  // background: url("~assets/images/taw/bg05dark.png") center bottom -40rem / 100%
+  //   100% fixed no-repeat;
 }
 #taw-2 {
   #taw-2-1 {
@@ -296,10 +490,18 @@ export default {
 #taw-4 {
   #bus {
     top: 0;
-    left: 10%;
+    left: 8%;
     @include break($widescreen) {
       left: 15%;
     }
+  }
+  #bus-path-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  #bus-path {
+    visibility: hidden;
   }
   .jumbo-content {
     padding: 8rem 0;

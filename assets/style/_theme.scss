@@ -20,6 +20,39 @@ $flavor2: #4a4a4a;
 $flavor: $flavor1;
 // $flavor1-dark: darken($flavor1, 30%);
 
+@mixin scrollbars(
+  $size,
+  $foreground-color,
+  $background-color: mix($foreground-color, white, 50%)
+) {
+  // Firefox
+  @at-root * {
+    scrollbar-width: thin;
+    scrollbar-color: $foreground-color $background-color;
+  }
+
+  // Chromium
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+    border: 2px solid $background-color;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $background-color;
+  }
+
+  // Internet Explorer
+  & {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}
+
 $font-primary: "PT Sans", sans-serif;
 $bold: bold;
 $nomra: normal;

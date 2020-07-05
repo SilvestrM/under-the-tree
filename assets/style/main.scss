@@ -2,6 +2,15 @@
 // @import "./_theme.scss";
 @include normalize();
 
+// * {
+//   scrollbar-width: thin;
+//   scrollbar-color: $gray-darker1, $gray-lighter;
+// }
+
+body {
+  @include scrollbars(0.75rem, $gray-darker1, $gray-lighter);
+}
+
 #app {
   position: relative;
   padding-top: 3rem;
@@ -36,6 +45,7 @@ section {
     .jumbo-content {
       display: flex;
       position: relative;
+      z-index: 5;
       width: 100%;
       @include break($tablet) {
         width: auto;
@@ -238,19 +248,24 @@ img {
   color: $white-ish;
   text-decoration: none;
   transition: all $tspeed;
+  // &::after {
+  //   opacity: 0;
+  //   content: "";
+  //   background-color: $gray-darker;
+  //   width: 100%;
+  //   height: 100%;
+  //   position: absolute;
+  //   left: 5px;
+  //   top: 5px;
+  //   z-index: -2;
+  // }
   &:hover {
     background-color: darken($flavor1, 5%);
+    color: $white-ish;
     transition: all $tspeed;
     &::after {
+      opacity: 1;
       transition: all $tspeed;
-      content: "";
-      background-color: darken($gray, 20%);
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      left: 5px;
-      top: 5;
-      z-index: -2;
     }
   }
   &.taw-primary {
@@ -285,6 +300,9 @@ img {
 .link-row {
   display: flex;
   margin: $spacing0 0;
+  > * {
+    margin: 0 0.25em;
+  }
 }
 
 .box {
