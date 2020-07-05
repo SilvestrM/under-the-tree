@@ -32,6 +32,7 @@
       </div>
     </section>
     <section id="taw-2" class="section is-flex justify-center fullheight">
+      <div id="taw-2-upperbcg"></div>
       <img
         class="decorative mobile-hidden"
         style="width: 10rem; top: 20rem; left: 15%;"
@@ -84,8 +85,8 @@
         alt=""
       />
       <div class="container is-relative">
-        <div class="cols justify-center align-center">
-          <div class="col third is-text-dark">
+        <div id="staggered-cols" class="cols justify-center align-center">
+          <div class="col third is-text-dark stag-anim">
             <figure class="image-wrapper">
               <img
                 class="is-thumbnail"
@@ -101,7 +102,7 @@
               tempora mollitia soluta?
             </p>
           </div>
-          <div class="col third is-text-dark">
+          <div class="col third is-text-dark stag-anim">
             <figure class="image-wrapper">
               <img
                 class="is-thumbnail"
@@ -117,7 +118,7 @@
               tempora mollitia soluta?
             </p>
           </div>
-          <div class="col third is-text-dark">
+          <div class="col third is-text-dark stag-anim">
             <figure class="image-wrapper">
               <img
                 class="is-thumbnail"
@@ -261,6 +262,7 @@ export default {
     },
   },
   mounted() {
+    // Section 1 mousecroll icon animation
     const mouseIconScaling = this.$gsap.to("#mousescroll-icon", {
       duration: 0.86,
       scale: 1.1,
@@ -280,6 +282,95 @@ export default {
           mouseIconScaling.resume()
         }
       },
+    })
+
+    this.$gsap.to("#taw-1", {
+      duration: 3,
+      scrollTrigger: {
+        trigger: "#taw-1",
+        start: "center top",
+        scrub: 1,
+      },
+      opacity: 0,
+    })
+
+    // section 2 parallax animation
+    this.$gsap.set("#taw-2", {
+      backgroundPosition: "center top",
+      opacity: 0,
+    })
+    this.$gsap.to("#taw-2", {
+      duration: 2,
+      scrollTrigger: {
+        trigger: "#taw-2",
+        start: "top bottom",
+        end: "center center",
+        scrub: 0.5,
+      },
+      opacity: 1,
+    })
+
+    this.$gsap.to("#taw-2", {
+      duration: 3,
+      scrollTrigger: {
+        trigger: "#taw-2",
+        start: "center bottom",
+        scrub: 0.5,
+      },
+      backgroundPosition: "center 100%",
+    })
+
+    //section 3
+    this.$gsap.fromTo(
+      "#staggered-cols .col",
+      {
+        scale: 0.5,
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 1,
+        ease: "sine",
+        scale: 1,
+        stagger: { each: 0.1, grid: "auto" },
+        scrollTrigger: {
+          trigger: "#taw-3",
+          start: "center bottom",
+          end: "center center",
+        },
+      }
+    )
+
+    // Section 4
+    // Scroll-in opacity
+    this.$gsap.set("#taw-4", {
+      opacity: 0,
+    })
+    this.$gsap.to("#taw-4", {
+      duration: 2,
+      scrollTrigger: {
+        trigger: "#taw-4",
+        start: "top bottom",
+        end: "center center",
+        scrub: 0.5,
+      },
+      opacity: 1,
+    })
+
+    // Section 5
+    // scroll-in opacity
+    this.$gsap.set("#taw-5", {
+      opacity: 0,
+    })
+    this.$gsap.to("#taw-5", {
+      duration: 2,
+      scrollTrigger: {
+        trigger: "#taw-4",
+        start: "80% bottom",
+        end: "center center",
+        scrub: 0.5,
+      },
+      opacity: 1,
     })
 
     // Bus animation
@@ -414,6 +505,15 @@ export default {
   //   100% fixed no-repeat;
 }
 #taw-2 {
+  #taw-2-upperbcg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("~assets/images/taw/bg04.png") center 60% / 100% 80%
+      no-repeat;
+  }
   #taw-2-1 {
     display: flex;
     flex-direction: column;
@@ -442,8 +542,8 @@ export default {
     z-index: 1;
   }
   margin: 5rem 0 10rem;
-  background: url("~assets/images/taw/bg04.png") center 60% / 100% 80% no-repeat,
-    url("~assets/images/taw/bg05dark.png") center top / 100% 70% no-repeat;
+  background: url("~assets/images/taw/bg05dark.png") center top / 100% 70%
+    no-repeat;
 }
 #taw-3 {
   // .cols {

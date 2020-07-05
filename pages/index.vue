@@ -77,8 +77,8 @@ export default {
         trigger: "#games-box",
         start: "top 75%",
         // endTrigger: "#title",
-        end: "-=200",
-        scrub: 1,
+        // end: "-=200",
+        scrub: 0.5,
       },
       y: -200,
     })
