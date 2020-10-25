@@ -13,12 +13,12 @@
     <section id="games-box" style="margin-top: -8rem;" class="section">
       <div class="container box">
         <div class="justify-center">
-          <h2 class="title is-medium">Made by us</h2>
+          <h2 class="title is-medium spaced">Made by us</h2>
         </div>
         <hr />
         <div class="section">
           <div id="box-1" class="cols sectioned">
-            <div class="col half">
+            <div class="col half vert-centered">
               <span class="card-header">
                 <h3 class="title is-small">Take A Walk</h3>
                 <span class="status text-uppercase">in developement</span>
@@ -33,7 +33,7 @@
                 <nuxt-link to="take_a_walk" class="button">More info</nuxt-link>
               </div>
             </div>
-            <div class="col half">
+            <div class="col half vert-centered">
               <figure>
                 <img src="https://via.placeholder.com/500x250.png" alt srcset />
               </figure>
@@ -41,12 +41,12 @@
           </div>
 
           <div id="box-2" class="cols sectioned box light">
-            <div class="col half">
+            <div class="col half vert-centered">
               <figure>
                 <img src="https://via.placeholder.com/500x250.png" alt srcset />
               </figure>
             </div>
-            <div class="col half">
+            <div class="col half vert-centered">
               <span class="card-header">
                 <h3 class="title is-small">Fast and Speedy</h3>
                 <span class="status text-uppercase">in developement</span>
