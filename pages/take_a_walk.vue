@@ -2,16 +2,32 @@
   <div class="wrapper">
     <section id="taw-1" class="section fullheight jumbo">
       <div class="jumbo-content">
-        <div class="image-wrapper">
-          <img style="width: 40rem;" src="~/assets/images/taw/logo.png" alt />
+        <!-- <div class="image-wrapper">
+          <img style="width: 40rem;" src="~/assets/images/taw/logo.png" alt />      
+        </div> -->
+        <div class="heading">
+          <h1 class="title is-big is-text-dark">Take a Walk</h1>
+          <span class="status text-uppercase is-text-bold is-text-gray-dark"
+            >game in developement</span
+          >
+        </div>
+        <div class="embed-video-container">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube-nocookie.com/embed/ZWf-k6pMtMY?controls=0"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
         </div>
         <div
-          style="flex-direction: column; bottom: 3rem;"
+          style="flex-direction: column; margin-top: 1.5rem;"
           class="is-relative is-flex align-center"
         >
-          <h2 class="subtitle is-big is-text-dark">
+          <!-- <h2 class="subtitle is-big is-text-dark">
             A game in developement
-          </h2>
+          </h2> -->
 
           <div>
             <a
@@ -22,8 +38,9 @@
               >Follow</a
             >
           </div>
-          <p class="is-text-gray-dark">Scroll for more info</p>
+          <p class="is-text-gray-dark">Scroll down for more info</p>
           <img
+            style="margin-top: 1rem;"
             id="mousescroll-icon"
             src="~/assets/images/taw/mouse-scroll.svg"
             alt=""
@@ -54,10 +71,11 @@
             <div class="col full is-text-dark align-center justify-center">
               <h3 class="title is-small">Just take a walk</h3>
               <p class="is-text-dark">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
-                tenetur illum earum itaque inventore neque reprehenderit. Animi
-                porro fugit, laudantium unde vel ullam, iure ratione eos at
-                tempora mollitia soluta?
+                Take a Walk is a short adventure game with puzzles and
+                minigames. Step into a world full of unlikely places and meet
+                residents of this hand-drawn realm. Entire experience is
+                accompanied by a certified guide named Brian who makes sure that
+                you won't get lost on the way...
               </p>
             </div>
           </div>
@@ -94,12 +112,10 @@
                 alt="game screenshot"
               />
             </figure>
-            <h3 class="subtitle is-medium spaced">Explore</h3>
+            <h3 class="subtitle is-medium spaced">Platforming</h3>
             <p class="is-marginless">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
-              tenetur illum earum itaque inventore neque reprehenderit. Animi
-              porro fugit, laudantium unde vel ullam, iure ratione eos at
-              tempora mollitia soluta?
+              Use legs as means of trnsportation to explore various places on,
+              under or on top of a surface.
             </p>
           </div>
           <div class="col third is-text-dark stag-anim">
@@ -502,8 +518,25 @@ export default {
   background-color: $gray-lighter;
   color: $gray-dark;
   // background: url("~assets/images/taw/bg05dark.png") center bottom -40rem / 100%
-  //   100% fixed no-repeat;
 }
+
+#taw-1 {
+  .title.is-big {
+    font-size: clamp(3rem, 4vw, 20rem);
+    letter-spacing: 0.05em;
+  }
+
+  .jumbo-content {
+    justify-content: flex-start;
+    .heading {
+      margin: $spacing2 0;
+    }
+  }
+  p {
+    margin: $spacing0;
+  }
+}
+
 #taw-2 {
   #taw-2-upperbcg {
     position: absolute;
