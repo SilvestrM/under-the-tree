@@ -6,10 +6,10 @@
           <img style="width: 40rem;" src="~/assets/images/taw/logo.png" alt />      
         </div> -->
         <div class="heading">
-          <h1 class="title is-big is-text-dark">Take a Walk</h1>
-          <span class="status text-uppercase is-text-bold is-text-gray-dark"
-            >game in developement</span
-          >
+          <h1 class="title is-big is-text-dark">{{ $t("taw.gameName") }}</h1>
+          <span class="status text-uppercase is-text-bold is-text-gray-dark">{{
+            $t("taw.status")
+          }}</span>
         </div>
         <div class="embed-video-container">
           <iframe
@@ -35,10 +35,10 @@
               href=""
               @click.prevent="scrollTo('taw-4')"
               class="button taw-primary"
-              >Follow</a
+              >{{ $t("taw.ctoa") }}</a
             >
           </div>
-          <p class="is-text-gray-dark">Scroll down for more info</p>
+          <p class="is-text-gray-dark">{{ $t("taw.scrollIst") }}</p>
           <img
             style="margin-top: 1rem;"
             id="mousescroll-icon"
@@ -69,13 +69,9 @@
             class="cols align-center justify-center"
           >
             <div class="col full is-text-dark align-center justify-center">
-              <h3 class="title is-small">Just take a walk</h3>
+              <h3 class="title is-small">{{ $t("taw.desc.title") }}</h3>
               <p class="is-text-dark">
-                Take a Walk is a short adventure game with puzzles and
-                minigames. Step into a world full of unlikely places and meet
-                residents of this hand-drawn realm. Entire experience is
-                accompanied by a certified guide named Brian who makes sure that
-                you won't get lost on the way...
+                {{ $t("taw.desc.text") }}
               </p>
             </div>
           </div>
@@ -103,7 +99,7 @@
         alt=""
       />
       <div class="container is-relative">
-        <div id="staggered-cols" class="cols justify-center align-center">
+        <div id="staggered-cols" class="grid-cols is-m-center">
           <div class="col third is-text-dark stag-anim">
             <figure class="image-wrapper">
               <img
@@ -112,10 +108,11 @@
                 alt="game screenshot"
               />
             </figure>
-            <h3 class="subtitle is-medium spaced">Platforming</h3>
+            <h3 class="subtitle is-medium spaced">
+              {{ $t("taw.feature1.name") }}
+            </h3>
             <p class="is-marginless">
-              Use legs as means of trnsportation to explore various places on,
-              under or on top of a surface.
+              {{ $t("taw.feature1.desc") }}
             </p>
           </div>
           <div class="col third is-text-dark stag-anim">
@@ -126,12 +123,11 @@
                 alt="game screenshot"
               />
             </figure>
-            <h3 class="subtitle is-medium spaced">Puzzles</h3>
+            <h3 class="subtitle is-medium spaced">
+              {{ $t("taw.feature2.name") }}
+            </h3>
             <p class="is-marginless">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
-              tenetur illum earum itaque inventore neque reprehenderit. Animi
-              porro fugit, laudantium unde vel ullam, iure ratione eos at
-              tempora mollitia soluta?
+              {{ $t("taw.feature2.desc") }}
             </p>
           </div>
           <div class="col third is-text-dark stag-anim">
@@ -142,12 +138,11 @@
                 alt="game screenshot"
               />
             </figure>
-            <h3 class="subtitle is-medium spaced">Story</h3>
+            <h3 class="subtitle is-medium spaced">
+              {{ $t("taw.feature3.name") }}
+            </h3>
             <p class="is-marginless">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
-              tenetur illum earum itaque inventore neque reprehenderit. Animi
-              porro fugit, laudantium unde vel ullam, iure ratione eos at
-              tempora mollitia soluta?
+              {{ $t("taw.feature3.desc") }}
             </p>
           </div>
         </div>
@@ -215,9 +210,11 @@
       </svg> -->
 
       <div class="jumbo-content is-text-gray-dark">
-        <h1 class="title is-medium is-text-gray-dark">Take a walk</h1>
-        <h2 class="subtitle is-small is-text-gray-dark italic">
-          In developement by Miccielly
+        <!-- <h1 class="title is-medium is-text-gray-dark">
+          {{ $t("taw.gameName") }}
+        </h1> -->
+        <h2 class="title is-small is-text-gray-dark">
+          {{ $t("taw.linksBox.status") }}
         </h2>
         <div class="link-row">
           <a
@@ -240,7 +237,9 @@
             ><IconifyIcon height="40" :icon="icons.bxlPlayStore"
           /></a>
         </div>
-        <p class="is-text-gray-dark is-marginless">Follow to stay informed!</p>
+        <p class="is-text-gray-dark is-marginless">
+          {{ $t("taw.linksBox.ctoaText") }}
+        </p>
       </div>
     </section>
     <section style="height: 75vh;" id="taw-5" class="section"></section>
@@ -640,6 +639,9 @@ export default {
     padding: 8rem 0;
     background: url("~assets/images/taw/boardsign_paper.png") center / contain
       no-repeat;
+    > * {
+      margin: $spacing0 0;
+    }
     @include break($tablet) {
       padding: 8rem;
     }

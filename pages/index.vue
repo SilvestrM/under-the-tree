@@ -5,32 +5,39 @@
       class="section fullheight jumbo justify-center landing"
     >
       <div id="title" class="jumbo-content" style="margin-top: -10rem;">
-        <h1 class="title is-big">Under The Tree</h1>
-        <p class="subtitle is-big italic">Making things together!</p>
-        <a style="margin-top: 1rem;" href="#" class="button">Browse games</a>
+        <h1 class="title is-big">
+          {{ $t("homepage.siteName") }}
+        </h1>
+        <p class="subtitle is-big italic">
+          {{ $t("homepage.catchPhrase") }}
+        </p>
+        <a style="margin-top: 1rem;" href="#" class="button">{{
+          $t("homepage.browse")
+        }}</a>
       </div>
     </section>
     <section id="games-box" style="margin-top: -8rem;" class="section">
       <div class="container box">
         <div class="justify-center">
-          <h2 class="title is-medium spaced">Made by us</h2>
+          <h2 class="title is-medium spaced">{{ $t("homepage.madeByUs") }}</h2>
         </div>
         <hr />
         <div class="section">
           <div id="box-1" class="cols sectioned">
-            <div class="col half vert-centered">
+            <div class="col half">
               <span class="card-header">
-                <h3 class="title is-small">Take A Walk</h3>
-                <span class="status text-uppercase">in developement</span>
+                <h3 class="title is-small">{{ $t("homepage.game1Name") }}</h3>
+                <span class="status text-uppercase">{{
+                  $t("homepage.inDevelopement")
+                }}</span>
               </span>
               <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Incidunt, aliquid doloremque pariatur voluptas dolorem laborum
-                delectus eum! Tenetur deleniti nisi molestias qui, iste eius
-                atque. Praesentium reiciendis maxime quae culpa.
+                {{ $t("homepage.game1Desc") }}
               </p>
               <div>
-                <nuxt-link to="take_a_walk" class="button">More info</nuxt-link>
+                <nuxt-link :to="localePath('take_a_walk')" class="button">{{
+                  $t("homepage.moreInfo")
+                }}</nuxt-link>
               </div>
             </div>
             <div class="col half vert-centered">
@@ -46,19 +53,20 @@
                 <img src="https://via.placeholder.com/500x250.png" alt srcset />
               </figure>
             </div>
-            <div class="col half vert-centered">
+            <div class="col half">
               <span class="card-header">
-                <h3 class="title is-small">Fast and Speedy</h3>
-                <span class="status text-uppercase">in developement</span>
+                <h3 class="title is-small">{{ $t("homepage.game2Name") }}</h3>
+                <span class="status text-uppercase">{{
+                  $t("homepage.inDevelopement")
+                }}</span>
               </span>
               <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Incidunt, aliquid doloremque pariatur voluptas dolorem laborum
-                delectus eum! Tenetur deleniti nisi molestias qui, iste eius
-                atque. Praesentium reiciendis maxime quae culpa.
+                {{ $t("homepage.game2Desc") }}
               </p>
               <div>
-                <nuxt-link to="take_a_walk" class="button">More info</nuxt-link>
+                <nuxt-link to="take_a_walk" class="button"
+                  >{{ $t("homepage.moreInfo") }}
+                </nuxt-link>
               </div>
             </div>
           </div>

@@ -5,10 +5,14 @@
         <div class="footer-item">
           <ul class="horizontal-list">
             <li>
-              <nuxt-link to="/">About</nuxt-link>
+              <nuxt-link :to="localePath('/about')">{{
+                $t("footer.about")
+              }}</nuxt-link>
             </li>
             <li>
-              <nuxt-link to="/">Contact</nuxt-link>
+              <nuxt-link :to="localePath('/')">{{
+                $t("footer.contact")
+              }}</nuxt-link>
             </li>
           </ul>
         </div>
@@ -29,7 +33,7 @@
             /></a>
           </div>
         </div>
-        <span class="footer-item">&copy; 2020 Under The Tree</span>
+        <span class="footer-item">&copy; {{ $t("footer.copy") }}</span>
       </div>
     </div>
   </footer>

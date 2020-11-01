@@ -1,5 +1,4 @@
 // @import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-
 // colors $
 $gray-dark: #2c2c2c;
 $gray-darker: #2f2f2f;
@@ -53,14 +52,17 @@ $flavor: $flavor1;
   }
 }
 
-$font-primary: "PT Sans", sans-serif;
+$font-primary: "Rubik", "PT Sans", sans-serif;
 $bold: bold;
-$nomra: normal;
+$nomral: normal;
 
 //sizes
 $spacing0: 0.5rem;
 $spacing1: 1rem;
 $spacing2: 2rem;
+
+//Footer height
+$footer-height: 10rem;
 
 //animations
 $tspeed: 100ms;

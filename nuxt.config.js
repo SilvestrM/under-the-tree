@@ -1,3 +1,5 @@
+import i18n from "./locales/i18n"
+
 export default {
   ssr: true,
   /*
@@ -27,6 +29,11 @@ export default {
         href:
           "https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap",
       },
+      {
+        rel: "stylesheet",
+        href:
+          "https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap",
+      },
     ],
   },
 
@@ -54,7 +61,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ["@nuxtjs/style-resources"],
+  modules: ["@nuxtjs/style-resources", "nuxt-i18n"],
   styleResources: {
     scss: [
       "normalize-scss",
@@ -64,6 +71,20 @@ export default {
     ],
   },
 
+  i18n: {
+    locales: [
+      { code: "en", iso: "en-US", name: "EN", file: "en.js" },
+      { code: "cs", iso: "cs-CZ", name: "CZ", file: "cs.js" },
+    ],
+    defaultLocale: "en",
+    //strategy: "no_prefix",
+    vueI18n: i18n,
+
+    //TODO
+    // detectBrowserLanguage: {
+    //   useCookie: false,
+    // },
+  },
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
