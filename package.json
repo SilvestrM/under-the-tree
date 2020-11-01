@@ -7,26 +7,27 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "export": "nuxt export",
+    "generate": "nuxt generate",
     "serve": "nuxt serve"
   },
   "dependencies": {
-    "gsap": "^3.3.4",
+    "gsap": "^3.5.1",
     "normalize-scss": "^7.0.1",
-    "nuxt": "^2.13.0"
+    "nuxt": "^2.14.7"
   },
   "devDependencies": {
-    "@iconify/icons-bx": "^1.0.3",
-    "@iconify/icons-openmoji": "^1.0.60",
-    "@iconify/vue": "^1.0.2",
+    "@iconify/icons-bx": "^1.0.5",
+    "@iconify/icons-openmoji": "^1.0.69",
+    "@iconify/vue": "^1.0.5",
     "@nuxtjs/style-resources": "^1.0.0",
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.3.1",
-    "eslint-config-prettier": "^6.11.0",
+    "eslint": "^7.12.1",
+    "eslint-config-prettier": "^6.15.0",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-vue": "^6.2.2",
     "node-sass": "^4.14.1",
-    "prettier": "^2.0.5",
+    "prettier": "^2.1.2",
     "sass-loader": "^8.0.2"
   },
   "prettier": {
