@@ -30,5 +30,9 @@
   &.taw-primary {
     background-color: $flavor2;
     color: $white-ish;
+
+    &:hover {
+      background-color: lighten($flavor2, 5);
+    }
   }
 }

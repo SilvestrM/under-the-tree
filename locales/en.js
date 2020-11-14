@@ -38,7 +38,7 @@ export default {
       text:
         "Take a Walk is a short adventure game with puzzles and minigames. Step into a world full of unlikely places and meet residents of this hand-drawn realm. Entire experience is accompanied by a certified guide named Brian who makes sure that you won't get lost on the way...",
     },
-    featuresTitle: "Features",
+    featuresTitle: "Game Features",
     featuresText:
       "The whole game is hand-drawn on paper to achieve an authentic visual style.",
     feature1: {

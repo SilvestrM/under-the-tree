@@ -87,12 +87,14 @@
         alt=""
       />
       <img
+        id="fallingPlatform"
         class="decorative mobile-hidden"
         style="width: 10rem; top: -15rem; left: 25%;"
         src="~/assets/images/taw/fallingplatform.png"
         alt=""
       />
       <img
+        id="sitting-man-dec"
         class="decorative mobile-hidden"
         style="width: 10rem; top: 5rem; left: 12%;"
         src="~/assets/images/taw/spritesheet3.png"
@@ -100,6 +102,7 @@
       />
       <div class="container is-relative">
         <div
+          id="features-title"
           style="text-align: center;"
           class="cols align-center justify-center"
         >
@@ -107,7 +110,9 @@
             style="margin-bottom: 1rem;"
             class="col full is-text-dark align-center"
           >
-            <h3 class="title is-medium">{{ $t("taw.featuresTitle") }}</h3>
+            <h3 class="title is-medium">
+              {{ $t("taw.featuresTitle") }}
+            </h3>
             <!-- <p class="is-text-dark">
               {{ $t("taw.featuresText") }}
             </p> -->
@@ -224,34 +229,6 @@
         alt=""
       />
 
-      <!-- <svg
-        id="bus-path-wrapper"
-        class="decorative mobile-hidden"
-        width="100%"
-        height="100%"
-        viewBox="0 0 1190 765"
-        version="1.1"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        xml:space="preserve"
-        xmlns:serif="http://www.serif.com/"
-        style="
-          fill-rule: evenodd;
-          clip-rule: evenodd;
-          stroke-linecap: round;
-          stroke-linejoin: round;
-          stroke-miterlimit: 1.5;
-        "
-      >
-        <g transform="matrix(1,0,0,1,-324.737,-105.818)">
-          <path
-            id="bus-path"
-            d="M325.237,246.972C718.557,51.521 1044.34,78.374 1337.09,213.977C1563.52,386.809 1545.02,559.64 1436.07,732.471C1356.05,824.231 1207.1,873.772 1030.7,869.165"
-            style="fill: none; stroke: none;"
-          />
-        </g>
-      </svg> -->
-
       <div class="jumbo-content is-text-gray-dark">
         <!-- <h1 class="title is-medium is-text-gray-dark">
           {{ $t("taw.gameName") }}
@@ -297,6 +274,8 @@ import bxlTwitch from "@iconify/icons-bx/bxl-twitch"
 import bxlInstagram from "@iconify/icons-bx/bxl-instagram"
 import bxlPlayStore from "@iconify/icons-bx/bxl-play-store"
 
+import { Draggable } from "gsap/Draggable.js"
+
 export default {
   components: {
     IconifyIcon,
@@ -323,6 +302,8 @@ export default {
     },
   },
   mounted() {
+    this.$gsap.registerPlugin(Draggable)
+
     // Section 1 mousecroll icon animation
     const mouseIconScaling = this.$gsap.to("#mousescroll-icon", {
       duration: 0.86,
@@ -381,8 +362,71 @@ export default {
       backgroundPosition: "center 100%",
     })
 
-    //section 3
+    /**
+     * section 3
+     * **/
+
+    Draggable.create("#fallingPlatform", {
+      type: "x,y",
+      bounds: { maxY: 500, minY: -500 },
+    })
+
+    // sitting man
     this.$gsap.fromTo(
+      "#sitting-man-dec",
+      {
+        opacity: 0,
+      },
+      {
+        ease: "sine",
+        opacity: 1,
+        duration: 1.5,
+        scrollTrigger: {
+          trigger: "#taw-3",
+          start: "center bottom",
+          end: "center center",
+        },
+      }
+    )
+    // features title
+    this.$gsap.fromTo(
+      "#features-title h3",
+      {
+        scale: 0.8,
+        opacity: 0.1,
+      },
+      {
+        opacity: 1,
+        duration: 1,
+        ease: "power3",
+        scale: 1,
+        scrollTrigger: {
+          scrub: 0.5,
+          trigger: "#taw-3",
+          start: "center bottom",
+          end: "center center",
+        },
+      }
+    )
+
+    // features videos
+    const featureVideos = this.$el.querySelectorAll("video")
+
+    featureVideos.forEach((v) => v.pause())
+
+    const featuresTimeline = this.$gsap.timeline({
+      scrollTrigger: {
+        trigger: "#taw-3",
+        start: "center bottom",
+        end: "center top",
+        once: true,
+        onEnter: () => {
+          featureVideos.forEach((v) => v.play())
+        },
+      },
+    })
+
+    featuresTimeline.fromTo(
       "#staggered-cols .col",
       {
         scale: 0.5,
@@ -390,15 +434,26 @@ export default {
       },
       {
         opacity: 1,
+        duration: 0.8,
+        ease: "power3",
+        scale: 1,
+        stagger: { each: 0.1, grid: "auto" },
+      }
+    )
+
+    featuresTimeline.fromTo(
+      "#staggered-cols h3, #staggered-cols p",
+      {
+        scale: 0.5,
+        opacity: 0,
+      },
+      {
+        opacity: 1,
         duration: 1,
+        delay: -0.6,
         ease: "sine",
         scale: 1,
         stagger: { each: 0.1, grid: "auto" },
-        scrollTrigger: {
-          trigger: "#taw-3",
-          start: "center bottom",
-          end: "center center",
-        },
       }
     )
 
@@ -551,9 +606,6 @@ export default {
 }
 </script>
 <style lang="scss">
-// body {
-//   @include scrollbars(0.75rem, $gray-darker1, $gray-lighter);
-// }
 #app {
   background-color: $gray-lighter;
 }

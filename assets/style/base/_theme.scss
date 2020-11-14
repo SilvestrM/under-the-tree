@@ -14,43 +14,17 @@ $white-ish: #f0f0f0;
 $flavor1: #b49441;
 $flavor2: #4a4a4a;
 
-// $flavor-map: ('primary': $primary, 'dark': $dark, 'dark-gray': $dark-gray, 'background': $color);
+// UTT
+$base-text: "";
+$primary: "";
+$background: "";
+
+// TaW
+$taw-base-text: "";
+$taw-primary: "";
+$taw-background: "";
 
 $flavor: $flavor1;
-// $flavor1-dark: darken($flavor1, 30%);
-
-@mixin scrollbars(
-  $size,
-  $foreground-color,
-  $background-color: mix($foreground-color, white, 50%)
-) {
-  // Firefox
-  @at-root * {
-    scrollbar-width: thin;
-    scrollbar-color: $foreground-color $background-color;
-  }
-
-  // Chromium
-  &::-webkit-scrollbar {
-    width: $size;
-    height: $size;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: $foreground-color;
-    border: 2px solid $background-color;
-  }
-
-  &::-webkit-scrollbar-track {
-    background: $background-color;
-  }
-
-  // Internet Explorer
-  & {
-    scrollbar-face-color: $foreground-color;
-    scrollbar-track-color: $background-color;
-  }
-}
 
 // text
 $font-primary: "Rubik", "PT Sans", sans-serif;

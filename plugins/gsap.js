@@ -4,9 +4,7 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin.js"
 import { MotionPathPlugin } from "gsap/MotionPathPlugin.js"
 
 export default (context, inject) => {
-  gsap.registerPlugin(ScrollTrigger)
-  gsap.registerPlugin(ScrollToPlugin)
-  gsap.registerPlugin(MotionPathPlugin)
+  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, MotionPathPlugin)
   inject("ScrollTrigger", ScrollTrigger)
   inject("gsap", gsap)
 }
