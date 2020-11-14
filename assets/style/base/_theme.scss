@@ -52,9 +52,13 @@ $flavor: $flavor1;
   }
 }
 
+// text
 $font-primary: "Rubik", "PT Sans", sans-serif;
 $bold: bold;
 $nomral: normal;
+
+$paragraph-max-width: 30rem;
+$heading-max-width: 20em;
 
 //sizes
 $spacing0: 0.5rem;

@@ -1,0 +1,35 @@
+footer {
+  position: absolute;
+  bottom: 0;
+  min-height: $footer-height;
+  width: 100%;
+  background-color: $gray-darker2;
+
+  .footer-content {
+    color: $gray-light;
+    padding: $spacing1 0;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr;
+    @include break($mobile) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    align-items: center;
+    .footer-item {
+      a {
+        color: $gray-light;
+        text-decoration: underline;
+      }
+      padding: $spacing0;
+      justify-self: center;
+      @include break($mobile) {
+        &:first-child {
+          justify-self: start;
+        }
+        &:last-child {
+          justify-self: end;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+#nav {
+  background-color: fade-out($gray-darker, 0.3);
+  position: fixed;
+  z-index: 20;
+  height: 3rem;
+  top: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  .fixer {
+    display: block;
+    width: 100%;
+    margin: auto;
+    height: 100%;
+  }
+  .nav-content {
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto auto;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 100%;
+    .nav-item {
+      white-space: nowrap;
+      padding: 0 $spacing1;
+      margin: auto 0;
+      color: $white-ish;
+      transition: all $tspeed;
+      font-weight: $bold;
+      &:hover {
+        transition: all $tspeed;
+        color: darken($white-ish, 15%);
+      }
+    }
+    a {
+      text-decoration: none;
+    }
+  }
+}

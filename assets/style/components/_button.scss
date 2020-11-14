@@ -1,0 +1,34 @@
+.button {
+  @extend .is-text-bold;
+  position: relative;
+  display: inline-block;
+  padding: $spacing1 * 0.8 $spacing1 * 2;
+  background-color: $flavor1;
+  color: $white-ish;
+  text-decoration: none;
+  transition: all $tspeed;
+  // &::after {
+  //   opacity: 0;
+  //   content: "";
+  //   background-color: $gray-darker;
+  //   width: 100%;
+  //   height: 100%;
+  //   position: absolute;
+  //   left: 5px;
+  //   top: 5px;
+  //   z-index: -2;
+  // }
+  &:hover {
+    background-color: darken($flavor1, 5%);
+    color: $white-ish;
+    transition: all $tspeed;
+    &::after {
+      opacity: 1;
+      transition: all $tspeed;
+    }
+  }
+  &.taw-primary {
+    background-color: $flavor2;
+    color: $white-ish;
+  }
+}

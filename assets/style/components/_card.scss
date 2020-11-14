@@ -1,0 +1,13 @@
+.card-header {
+  display: inline-flex;
+  .title {
+    margin: 0;
+    font-size: 1.2em;
+  }
+  .status {
+    text-transform: uppercase;
+    margin-left: $spacing0;
+    color: $gray-light1;
+    font-size: 0.7em;
+  }
+}

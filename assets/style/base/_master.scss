@@ -1,0 +1,85 @@
+// @import "normalize-scss";
+// @import "./_theme.scss";
+
+@include normalize();
+
+// * {
+//   scrollbar-width: thin;
+//   scrollbar-color: $gray-darker1, $gray-lighter;
+// }
+
+body {
+  font-size: 18px;
+  @include scrollbars(0.75rem, $gray-darker1, $gray-light1);
+}
+
+#app {
+  position: relative;
+  box-sizing: border-box;
+  padding-top: 3rem;
+  padding-bottom: $footer-height;
+  min-height: calc(100vh);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  // background-color: $gray-dark;
+  font-family: $font-primary;
+  color: $white-ish;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: $white-ish;
+  transition: all $tspeed;
+  &:hover {
+    transition: all $tspeed;
+    text-decoration: none !important;
+    color: $gray-darker1;
+  }
+}
+
+p {
+  color: $gray-lighter;
+  line-height: 1.4;
+  max-width: $paragraph-max-width;
+  line-height: 1.5;
+}
+
+hr {
+  border-color: $gray;
+  border-style: solid;
+}
+
+figure {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.horizontal-list {
+  margin: 0;
+  padding: 0;
+  > li {
+    padding: 0.7rem;
+    display: inline;
+  }
+}
+
+.link-row {
+  display: flex;
+  margin: $spacing0 0;
+  > * {
+    margin: 0 0.25em;
+  }
+}
+
+.box {
+  background-color: $gray-darker;
+  box-shadow: 0 4 10 $gray-dark;
+  &.light {
+    background-color: $gray-darker1;
+  }
+}

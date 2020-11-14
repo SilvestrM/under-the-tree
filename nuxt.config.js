@@ -65,9 +65,17 @@ export default {
   styleResources: {
     scss: [
       "normalize-scss",
-      "~assets/style/_theme.scss",
+      "~assets/style/base/_theme.scss",
+      "~assets/style/base/_mixins.scss",
+      "~assets/style/base/_master.scss",
+      "~assets/style/layout/_layout.scss",
+      "~assets/style/layout/_nav.scss",
+      "~assets/style/layout/_footer.scss",
+      "~assets/style/components/_button.scss",
+      "~assets/style/components/_card.scss",
+      "~assets/style/components/_media.scss",
       "~assets/style/main.scss",
-      "~assets/style/modifiers.scss",
+      "~assets/style/base/_modifiers.scss",
     ],
   },
 
