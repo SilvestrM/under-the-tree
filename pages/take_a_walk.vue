@@ -69,7 +69,7 @@
             class="cols align-center justify-center"
           >
             <div class="col full is-text-dark align-center justify-center">
-              <h3 class="title is-small">{{ $t("taw.desc.title") }}</h3>
+              <h3 class="subtitle is-big">{{ $t("taw.desc.title") }}</h3>
               <p class="is-text-dark">
                 {{ $t("taw.desc.text") }}
               </p>
@@ -99,14 +99,34 @@
         alt=""
       />
       <div class="container is-relative">
+        <div
+          style="text-align: center;"
+          class="cols align-center justify-center"
+        >
+          <div
+            style="margin-bottom: 1rem;"
+            class="col full is-text-dark align-center"
+          >
+            <h3 class="title is-medium">{{ $t("taw.featuresTitle") }}</h3>
+            <!-- <p class="is-text-dark">
+              {{ $t("taw.featuresText") }}
+            </p> -->
+          </div>
+        </div>
         <div id="staggered-cols" class="grid-cols is-m-center">
           <div class="col third is-text-dark stag-anim">
             <figure class="image-wrapper">
-              <img
-                class="is-thumbnail"
-                src="~/assets/images/taw/game-screen1.jpg"
-                alt="game screenshot"
-              />
+              <video autoplay loop muted playsinline>
+                <source
+                  src="~/assets/videos/taw/rsz_jump.mp4"
+                  type="video/mp4"
+                />
+                <img
+                  class="is-thumbnail"
+                  src="~/assets/images/taw/game-screen1.jpg"
+                  alt="game screenshot"
+                />
+              </video>
             </figure>
             <h3 class="subtitle is-medium spaced">
               {{ $t("taw.feature1.name") }}
@@ -117,11 +137,17 @@
           </div>
           <div class="col third is-text-dark stag-anim">
             <figure class="image-wrapper">
-              <img
-                class="is-thumbnail"
-                src="~/assets/images/taw/game-screen2.jpg"
-                alt="game screenshot"
-              />
+              <video autoplay loop muted playsinline>
+                <source
+                  src="~/assets/videos/taw/rsz_puzzle.mp4"
+                  type="video/mp4"
+                />
+                <img
+                  class="is-thumbnail"
+                  src="~/assets/images/taw/game-screen2.jpg"
+                  alt="game screenshot"
+                />
+              </video>
             </figure>
             <h3 class="subtitle is-medium spaced">
               {{ $t("taw.feature2.name") }}
@@ -132,17 +158,34 @@
           </div>
           <div class="col third is-text-dark stag-anim">
             <figure class="image-wrapper">
-              <img
-                class="is-thumbnail"
-                src="~/assets/images/taw/game-screen3.jpg"
-                alt="game screenshot"
-              />
+              <video autoplay loop muted playsinline>
+                <source
+                  src="~/assets/videos/taw/rsz_story.mp4"
+                  type="video/mp4"
+                />
+                <img
+                  class="is-thumbnail"
+                  src="~/assets/images/taw/game-screen3.jpg"
+                  alt="game screenshot"
+                />
+              </video>
             </figure>
             <h3 class="subtitle is-medium spaced">
               {{ $t("taw.feature3.name") }}
             </h3>
             <p class="is-marginless">
               {{ $t("taw.feature3.desc") }}
+            </p>
+          </div>
+        </div>
+        <hr />
+        <div
+          style="text-align: center;"
+          class="cols align-center justify-center"
+        >
+          <div class="col full is-text-dark align-center">
+            <p class="is-text-dark">
+              {{ $t("taw.featuresText") }}
             </p>
           </div>
         </div>
@@ -213,9 +256,15 @@
         <!-- <h1 class="title is-medium is-text-gray-dark">
           {{ $t("taw.gameName") }}
         </h1> -->
-        <h2 class="title is-small is-text-gray-dark">
+        <h2
+          class="subtitle is-small is-text-gray-dark text-center"
+          style="margin-bottom: 2rem; margin-top: 2rem;"
+        >
           {{ $t("taw.linksBox.status") }}
         </h2>
+        <p class="is-text-gray-dark is-marginless">
+          {{ $t("taw.linksBox.ctoaText") }}
+        </p>
         <div class="link-row">
           <a
             class="is-text-dark"
@@ -229,7 +278,7 @@
             class="is-text-dark"
             target="blank"
             title="Instagram"
-            href="https://www.instagram.com/takeawalkgame/"
+            href="https://www.instagram.com/micciellythealchemist/"
             ><IconifyIcon height="40" :icon="icons.bxlInstagram"
           /></a>
 
@@ -237,9 +286,6 @@
             ><IconifyIcon height="40" :icon="icons.bxlPlayStore"
           /></a>
         </div>
-        <p class="is-text-gray-dark is-marginless">
-          {{ $t("taw.linksBox.ctoaText") }}
-        </p>
       </div>
     </section>
     <section style="height: 75vh;" id="taw-5" class="section"></section>
@@ -515,8 +561,15 @@ export default {
 <style lang="scss" scoped>
 .wrapper {
   background-color: $gray-lighter;
-  color: $gray-dark;
+  color: $gray-darker1;
   // background: url("~assets/images/taw/bg05dark.png") center bottom -40rem / 100%
+}
+
+.is-text-dark {
+  color: $gray-darker1;
+  &.title {
+    color: $gray-darker;
+  }
 }
 
 #taw-1 {
@@ -543,7 +596,7 @@ export default {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url("~assets/images/taw/bg04.png") center 60% / 100% 80%
+    background: url("~assets/images/taw/bg04.png") center 60% / 100% 90%
       no-repeat;
   }
   #taw-2-1 {
@@ -574,7 +627,7 @@ export default {
     z-index: 1;
   }
   margin: 5rem 0 10rem;
-  background: url("~assets/images/taw/bg05dark.png") center top / 100% 70%
+  background: url("~assets/images/taw/bg05dark.png") center top / 100% 80%
     no-repeat;
 }
 #taw-3 {
@@ -585,6 +638,10 @@ export default {
   //   }
   // }
   // height: 150vh;
+
+  .subtitle.is-medium {
+    letter-spacing: 0.05em;
+  }
 
   &:before {
     content: "";
@@ -635,8 +692,9 @@ export default {
   #bus-path {
     visibility: hidden;
   }
+
   .jumbo-content {
-    padding: 8rem 0;
+    padding: 8rem $spacing1;
     background: url("~assets/images/taw/boardsign_paper.png") center / contain
       no-repeat;
     > * {

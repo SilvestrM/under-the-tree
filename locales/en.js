@@ -34,10 +34,13 @@ export default {
     ctoa: "Follow",
     scrollIst: "Scroll down for more info",
     desc: {
-      title: "Just take a walk",
+      title: "Witness an ordinary human become the hero of his own life.",
       text:
         "Take a Walk is a short adventure game with puzzles and minigames. Step into a world full of unlikely places and meet residents of this hand-drawn realm. Entire experience is accompanied by a certified guide named Brian who makes sure that you won't get lost on the way...",
     },
+    featuresTitle: "Features",
+    featuresText:
+      "The whole game is hand-drawn on paper to achieve an authentic visual style.",
     feature1: {
       name: "Platforming",
       desc:
@@ -45,16 +48,15 @@ export default {
     },
     feature2: {
       name: "Puzzles",
-      desc:
-        "Use legs as means of trnsportation to explore various places on, under or on top of a surface.",
+      desc: "Puzzles can be found though the game in various forms.",
     },
     feature3: {
       name: "Story",
       desc:
-        "Use legs as means of trnsportation to explore various places on, under or on top of a surface. hswfddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "Mailboxes are not only inanimate objects but little helpers, accompanying you on your way.",
     },
     linksBox: {
-      status: "In developement by Micielly",
+      status: "The game is being developed by Micielly",
       ctoaText: "Follow to stay informed!",
     },
   },
