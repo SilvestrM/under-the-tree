@@ -17,7 +17,7 @@
           </ul>
         </div>
         <div class="footer-item">
-          <div class="link-row">
+          <div class="link-row justify-center">
             <a
               class="is-text-dark"
               target="blank"
@@ -32,8 +32,14 @@
               ><IconifyIcon height="32" :icon="icons.bxlPlayStore"
             /></a>
           </div>
+          <div class="text-small faded">
+            WEB by
+            <a target="_blank" href="http://mikeska.design">mikeska.design</a>
+          </div>
         </div>
-        <span class="footer-item">&copy; {{ $t("footer.copy") }}</span>
+        <span class="footer-item"
+          >&copy; {{ new Date().getFullYear() }} {{ $t("footer.copy") }}</span
+        >
       </div>
     </div>
   </footer>

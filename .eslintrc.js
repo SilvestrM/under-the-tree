@@ -21,6 +21,6 @@ module.exports = {
     semi: [2, "never"],
     "no-console": "off",
     "vue/max-attributes-per-line": "off",
-    "prettier/prettier": ["warn", { semi: false, endOfLine: "auto" }],
+    "prettier/prettier": ["off", { semi: false, endOfLine: "auto" }],
   },
 }

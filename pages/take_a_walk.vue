@@ -107,7 +107,7 @@
           class="cols align-center justify-center"
         >
           <div
-            style="margin-bottom: 1rem;"
+            style="margin-bottom: 3rem;"
             class="col full is-text-dark align-center"
           >
             <h3 class="title is-medium">
@@ -197,7 +197,7 @@
       </div>
     </section>
     <section
-      style="min-height: 70vh;"
+      style="min-height: 95vh;"
       id="taw-4"
       class="section jumbo justify-center"
     >
@@ -233,15 +233,15 @@
         <!-- <h1 class="title is-medium is-text-gray-dark">
           {{ $t("taw.gameName") }}
         </h1> -->
-        <h2
-          class="subtitle is-small is-text-gray-dark text-center"
-          style="margin-bottom: 2rem; margin-top: 2rem;"
-        >
+        <p class="is-text-gray-dark text-center is-marginless">
           {{ $t("taw.linksBox.status") }}
-        </h2>
-        <p class="is-text-gray-dark is-marginless">
-          {{ $t("taw.linksBox.ctoaText") }}
         </p>
+        <h2
+          class="subtitle is-small is-text-gray-dark"
+          style="margin-bottom: 1.5rem; margin-top: 0.5rem;"
+        >
+          {{ $t("taw.linksBox.ctoaText") }}
+        </h2>
         <div class="link-row">
           <a
             class="is-text-dark"
@@ -304,7 +304,10 @@ export default {
   mounted() {
     this.$gsap.registerPlugin(Draggable)
 
-    // Section 1 mousecroll icon animation
+    /**
+    Section 1 mousecroll icon animation
+     */
+
     const mouseIconScaling = this.$gsap.to("#mousescroll-icon", {
       duration: 0.86,
       scale: 1.1,
@@ -336,7 +339,10 @@ export default {
       opacity: 0,
     })
 
-    // section 2 parallax animation
+    /**
+    section 2 parallax animation
+    */
+
     this.$gsap.set("#taw-2", {
       backgroundPosition: "center top",
       opacity: 0,
@@ -449,7 +455,7 @@ export default {
       },
       {
         opacity: 1,
-        duration: 1,
+        duration: 0.6,
         delay: -0.6,
         ease: "sine",
         scale: 1,
@@ -457,7 +463,10 @@ export default {
       }
     )
 
-    // Section 4
+    /**
+     * Section 4
+     */
+
     // Scroll-in opacity
     this.$gsap.set("#taw-4", {
       opacity: 0,
@@ -473,7 +482,10 @@ export default {
       opacity: 1,
     })
 
-    // Section 5
+    /**
+     * Section 5
+     */
+
     // scroll-in opacity
     this.$gsap.set("#taw-5", {
       opacity: 0,
@@ -538,7 +550,10 @@ export default {
         // type: "cubic",
         path: [
           { x: 0, y: 0 },
-          { x: 1000, y: 50 },
+          {
+            x: window.innerWidth * 0.7,
+            y: this.$el.querySelector("#taw-4").clientHeight * 0.05,
+          },
         ],
         // align: "#bus-path",
       },
@@ -565,8 +580,14 @@ export default {
         curviness: 1,
         // type: "cubic",
         path: [
-          { x: 1000, y: 400 },
-          { x: 800, y: 500 },
+          {
+            x: window.innerWidth * 0.7,
+            y: this.$el.querySelector("#taw-4").clientHeight * 0.3,
+          },
+          {
+            x: window.innerWidth * 0.6,
+            y: this.$el.querySelector("#taw-4").clientHeight * 0.6,
+          },
         ],
       },
     })
@@ -690,6 +711,12 @@ export default {
   //   }
   // }
   // height: 150vh;
+
+  hr {
+    margin: 6rem 0 0.75rem;
+    border-color: $gray-light;
+    border-width: 0.5px;
+  }
 
   .subtitle.is-medium {
     letter-spacing: 0.05em;

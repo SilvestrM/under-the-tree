@@ -14,6 +14,10 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 // @import url("~assets/style/main.scss");
+#app {
+  padding-top: 3rem;
+  padding-bottom: $footer-height;
+}
 </style>

@@ -5,12 +5,21 @@ export default {
   nav: {
     games: "Games",
     about: "About us",
+    mainMenu: "Main Menu",
   },
 
   footer: {
     about: "About",
     contact: "Contact",
-    copy: "2020 Under The Tree",
+    copy: "Under The Tree",
+  },
+
+  general: {
+    back: "Back",
+  },
+
+  people: {
+    mici: "Miccielly",
   },
 
   //Homepage
@@ -28,9 +37,12 @@ export default {
     game2Desc:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt, aliquid doloremque pariatur voluptas dolorem laborum delectus eum! Tenetur deleniti nisi molestias qui, iste eius atque. Praesentium reiciendis maxime quae culpa.",
   },
+  about: {
+    heading: "About us",
+  },
   taw: {
     gameName: "Take a Walk",
-    status: "Game in developement",
+    status: "A game in developement",
     ctoa: "Follow",
     scrollIst: "Scroll down for more info",
     desc: {

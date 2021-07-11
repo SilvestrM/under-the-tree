@@ -2,11 +2,18 @@
   @extend .is-text-bold;
   position: relative;
   display: inline-block;
-  padding: $spacing1 * 0.8 $spacing1 * 2;
-  background-color: $flavor1;
-  color: $white-ish;
+  background-color: #edf2ef;
+  color: $gray;
   text-decoration: none;
   transition: all $tspeed;
+  border-radius: 12px;
+  padding: 1rem;
+  border: 2px solid $gray;
+  font-family: inherit;
+
+  &:not(:disabled) {
+    cursor: pointer;
+  }
   // &::after {
   //   opacity: 0;
   //   content: "";
@@ -19,8 +26,8 @@
   //   z-index: -2;
   // }
   &:hover {
-    background-color: darken($flavor1, 5%);
-    color: $white-ish;
+    background-color: #d9dfdc;
+    color: $gray;
     transition: all $tspeed;
     &::after {
       opacity: 1;
@@ -33,6 +40,15 @@
 
     &:hover {
       background-color: lighten($flavor2, 5);
+    }
+  }
+  &.inverted {
+    background-color: transparent;
+    color: $white-ish;
+    border-color: $white-ish;
+
+    &:hover {
+      background-color: hsl(154, 14%, 19%);
     }
   }
 }

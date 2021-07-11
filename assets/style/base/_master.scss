@@ -8,6 +8,9 @@
 //   scrollbar-color: $gray-darker1, $gray-lighter;
 // }
 
+* {
+  box-sizing: border-box;
+}
 body {
   font-size: 18px;
   @include scrollbars(0.75rem, $gray-darker1, $gray-light1);
@@ -16,9 +19,8 @@ body {
 #app {
   position: relative;
   box-sizing: border-box;
-  padding-top: 3rem;
-  padding-bottom: $footer-height;
-  min-height: calc(100vh);
+  min-height: 100vh;
+  //height: calc(100vh);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   // background-color: $gray-dark;

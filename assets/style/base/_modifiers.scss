@@ -111,3 +111,11 @@
     margin: $spacing1 0;
   }
 }
+
+.text-small {
+  font-size: 0.8em;
+
+  &.faded {
+    color: $gray-light1;
+  }
+}
