@@ -29,12 +29,12 @@
         }}</nuxt-link>
         <ul>
           <li class="menu-item">
-            <nuxt-link
+            <a
               class="button"
               target="_blank"
               title="https://www.instagram.com/micciellythealchemist/"
-              to="https://www.instagram.com/micciellythealchemist/"
-              >{{ $t("people.mici") }}</nuxt-link
+              href="https://www.instagram.com/micciellythealchemist/"
+              >{{ $t("people.mici") }}</a
             >
           </li>
         </ul>
