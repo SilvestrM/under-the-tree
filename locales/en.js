@@ -19,7 +19,14 @@ export default {
   },
 
   people: {
-    mici: "Miccielly",
+    mici: {
+      name: "Mici",
+      desc: "Game Developer, Artist",
+    },
+    silvi: {
+      name: "Silvio",
+      desc: "Designer, UI Developer, Musician",
+    },
   },
 
   //Homepage
@@ -39,6 +46,10 @@ export default {
   },
   about: {
     heading: "About us",
+    p1: `Under The Tree je společenství kreativních lidí, kteří navzájem volně spolupracují na své tvorbě. Jedná se o především digitální tvorbu, ale to všeho druhu od videoher po hudbu.`,
+    why: "Proč zrovna Under the Tree?",
+    p2: `Po dlouhém hledání libozvučného a výstižného jména, jednou Micciho při koukání do korun stromů napadlo "Proč prostě se nepojmenovat Under The Tree? Stejně máme rádi přirodu".`,
+    members: "Kdo je součástí",
   },
   taw: {
     gameName: "Take a Walk",

@@ -4,7 +4,15 @@
     display: block;
     width: 100%;
 
+    margin: auto;
+
     object-fit: cover;
+    &.is-round {
+      border-radius: 50%;
+    }
+    &.is-rounded {
+      border-radius: $global-radius;
+    }
     &.is-thumbnail {
       height: 15rem;
       @include break($tablet) {

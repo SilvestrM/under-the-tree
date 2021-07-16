@@ -83,7 +83,7 @@ export default {
 }
 .grid-homepage {
   //padding: 4rem;
-  padding-top: 3rem;
+  padding-top: 4rem;
   position: relative;
   display: grid;
   grid-template-columns: 100%;
@@ -112,6 +112,9 @@ export default {
   h1 {
     font-size: 5em;
     @include break($mobile) {
+      font-size: 6em;
+    }
+    @include break($desktop) {
       font-size: 8em;
     }
     max-width: 5ch;

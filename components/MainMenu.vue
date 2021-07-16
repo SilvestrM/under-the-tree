@@ -34,7 +34,7 @@
               target="_blank"
               title="https://www.instagram.com/micciellythealchemist/"
               href="https://www.instagram.com/micciellythealchemist/"
-              >{{ $t("people.mici") }}</a
+              >{{ $t("people.mici.name") }}</a
             >
           </li>
         </ul>
@@ -59,6 +59,25 @@ export default {
     }
   },
   mounted() {
+    this.animationTweenIn = this.$gsap
+      .fromTo(
+        ".menu-item",
+        {
+          x: -200,
+          opacity: 0,
+        },
+        {
+          x: 0,
+          duration: 1,
+          opacity: 1,
+          ease: "elastic",
+          stagger: {
+            each: 0.15,
+            ease: "slow",
+          },
+        }
+      )
+      .kill()
     this.animationTweenOut = this.$gsap
       .fromTo(
         ".menu-item",
@@ -77,23 +96,6 @@ export default {
         }
       )
       .kill()
-    this.animationTweenIn = this.$gsap.fromTo(
-      ".menu-item",
-      {
-        x: -200,
-        opacity: 0,
-      },
-      {
-        x: 0,
-        duration: 1,
-        opacity: 1,
-        ease: "elastic",
-        stagger: {
-          each: 0.15,
-          ease: "slow",
-        },
-      }
-    )
   },
   methods: {
     switchMenu(number) {

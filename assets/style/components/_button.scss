@@ -6,7 +6,7 @@
   color: $gray;
   text-decoration: none;
   transition: all $tspeed;
-  border-radius: 12px;
+  border-radius: $global-radius;
   padding: 1rem;
   border: 2px solid $gray;
   font-family: inherit;

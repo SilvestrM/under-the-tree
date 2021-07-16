@@ -4,14 +4,23 @@
       <div class="nav-content container">
         <div style="justify-self: start;" class="nav-section">
           <!-- <router-link class="nav-item" :to="localePath('/')">Logo</router-link> -->
-          <div v-if="$route.path != '/'" class="nav-item">
-            <nuxt-link
-              style="padding: 0.5rem;"
-              class="button"
-              :to="localePath('/')"
-              >{{ $t("nav.mainMenu") }}</nuxt-link
-            >
-          </div>
+          <transition name="fade">
+            <div v-if="$nuxt.layoutName == 'default'" class="nav-item">
+              <span style="font-size: 1.1em;">{{
+                $t("homepage.siteName")
+              }}</span>
+            </div>
+          </transition>
+          <transition name="fade">
+            <div v-if="$route.path != '/'" class="nav-item">
+              <nuxt-link
+                style="padding: 0.5rem;"
+                class="button inverted"
+                :to="localePath('/')"
+                >{{ $t("nav.mainMenu") }}</nuxt-link
+              >
+            </div>
+          </transition>
         </div>
         <div style="justify-self: end;" class="nav-section">
           <!-- <nuxt-link class="nav-item" :to="localePath('/')">{{
@@ -46,4 +55,23 @@ export default {
 }
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+.button.inverted {
+  background-color: transparent;
+  color: $white-ish;
+  border-color: $white-ish;
+
+  &:hover {
+    background-color: hsla(0, 0%, 40%, 0.9);
+  }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>
