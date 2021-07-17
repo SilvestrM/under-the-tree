@@ -1,5 +1,5 @@
 <template>
-  <nav :class="{ transparent: reduced }" id="nav">
+  <nav ref="nav" :class="{ transparent: reduced }" id="nav">
     <div class="fixer">
       <div class="nav-content container">
         <div style="justify-self: start;" class="nav-section">
@@ -12,13 +12,16 @@
             </div>
           </transition>
           <transition name="fade">
-            <div v-if="$route.path != '/'" class="nav-item">
+            <div
+              v-if="$route.path != '/' && $route.path !== '/cs'"
+              class="nav-item"
+            >
               <nuxt-link
                 style="padding: 0.5rem;"
                 class="button inverted"
                 :to="localePath('/')"
-                >{{ $t("nav.mainMenu") }}</nuxt-link
-              >
+                >{{ $t("nav.mainMenu") }}
+              </nuxt-link>
             </div>
           </transition>
         </div>
@@ -43,9 +46,28 @@
 </template>
 
 <script>
+import { Uturn } from "~/mixins/scroll-uturn.js"
+
 export default {
   props: {
     reduced: { type: Boolean, default: false },
+  },
+  mounted() {
+    // Hides nav when scrolling down
+    const nav = this.$refs.nav
+    const uturn = new Uturn(document.body)
+
+    window.addEventListener("scroll", () => {
+      let dir = uturn.calculateDirection()
+      if (dir === "down") {
+        nav.style.transform = "translateY(-6rem)"
+      } else if (dir === "up") {
+        nav.style.transform = "translateY(0)"
+      }
+    })
+  },
+  beforeDestroy() {
+    window.removeEventListener("scroll", () => {})
   },
   computed: {
     availableLocales() {

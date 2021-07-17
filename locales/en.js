@@ -20,7 +20,7 @@ export default {
 
   people: {
     mici: {
-      name: "Mici",
+      name: "Miccielly",
       desc: "Game Developer, Artist",
     },
     silvi: {

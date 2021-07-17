@@ -7,6 +7,7 @@
   display: flex;
   flex-wrap: nowrap;
   width: 100%;
+  transition: all $tspeed;
   .fixer {
     display: block;
     width: 100%;

@@ -62,6 +62,17 @@ section {
     margin: 0 -$spacing1;
   }
 }
+
+//layout transitions
+// .layout-enter-active,
+// .layout-leave-active {
+//   transition: opacity $tspeed;
+// }
+// .layout-enter,
+// .layout-leave-active {
+//   opacity: 0;
+// }
+
 .cols {
   box-sizing: border-box;
   width: 100%;
