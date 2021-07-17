@@ -3,7 +3,7 @@
     <ul class="menu-list" key="1" v-show="activeMenu === 1">
       <li class="menu-item">
         <button class="button" @click="switchMenu(2)">
-          {{ $t("nav.games") }}
+          <iconify-icon :icon="icons.game" />{{ $t("nav.games") }}
         </button>
         <!-- <ul>
           <li class="menu-item">
@@ -14,14 +14,36 @@
         </ul> -->
       </li>
       <li class="menu-item">
-        <nuxt-link class="button" :to="localePath('about')">{{
-          $t("nav.about")
-        }}</nuxt-link>
+        <a
+          class="button"
+          target="_blank"
+          href="https://www.instagram.com/micciellythealchemist/"
+        >
+          <iconify-icon :icon="icons.insta" /> {{ $t("nav.instagram") }}
+        </a>
+      </li>
+      <li class="menu-item">
+        <a
+          class="button"
+          target="_blank"
+          href="https://www.youtube.com/channel/UCy6Axn0IWzF3AM4mLpSvJYw"
+        >
+          <iconify-icon :icon="icons.yt" />{{ $t("nav.youtube") }}
+        </a>
+      </li>
+      <li class="menu-item">
+        <nuxt-link class="button" :to="localePath('about')">
+          <iconify-icon :icon="icons.users" />{{ $t("nav.about") }}
+        </nuxt-link>
       </li>
     </ul>
     <ul class="menu-list" key="2" v-show="activeMenu === 2">
       <li class="menu-item header">
-        <h3>{{ $t("nav.games") }}</h3>
+        <h3>
+          <iconify-icon style="margin-right: 0.5rem;" :icon="icons.game" />{{
+            $t("nav.games")
+          }}
+        </h3>
       </li>
       <li class="menu-item">
         <nuxt-link class="button" :to="localePath('take_a_walk')">{{
@@ -41,7 +63,7 @@
       </li>
       <li class="menu-item">
         <button class="button inverted" @click="switchMenu(1)">
-          {{ $t("general.back") }}
+          <iconify-icon :icon="icons.left" />{{ $t("general.back") }}
         </button>
       </li>
     </ul>
@@ -49,13 +71,30 @@
 </template>
 
 <script>
+//icons
+import IconifyIcon from "@iconify/vue"
+import gameControllerIcon from "@iconify-icons/entypo/game-controller"
+import instaIcon from "@iconify-icons/entypo-social/instagram"
+import youtubeIcon from "@iconify-icons/entypo-social/youtube"
+import usersIcon from "@iconify-icons/entypo/users"
+import leftIcon from "@iconify-icons/entypo/chevron-left"
+
 export default {
   props: [],
+  components: { IconifyIcon },
   data() {
     return {
       activeMenu: 1,
       animationTweenOut: Object,
       animationTweenIn: Object,
+      //icons
+      icons: {
+        game: gameControllerIcon,
+        insta: instaIcon,
+        yt: youtubeIcon,
+        users: usersIcon,
+        left: leftIcon,
+      },
     }
   },
   mounted() {
@@ -145,8 +184,18 @@ ul.menu-list {
   }
 }
 
-.menu-item.header {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.menu-item {
+  a,
+  button {
+    display: inline-flex;
+    align-items: center;
+    svg {
+      margin-right: 0.5rem;
+    }
+  }
+  &.header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 </style>

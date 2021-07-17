@@ -5,6 +5,8 @@ export default {
   nav: {
     games: "Games",
     about: "About us",
+    instagram: "Instagram",
+    youtube: "Youtube",
     mainMenu: "Main Menu",
   },
 

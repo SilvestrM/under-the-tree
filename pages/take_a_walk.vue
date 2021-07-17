@@ -13,6 +13,7 @@
         </div>
         <div class="embed-video-container">
           <iframe
+            rel="preload"
             width="560"
             height="315"
             src="https://www.youtube-nocookie.com/embed/ZWf-k6pMtMY?controls=0"
@@ -189,7 +190,7 @@
           class="cols align-center justify-center"
         >
           <div class="col full is-text-dark align-center">
-            <p class="is-text-dark">
+            <p style="font-size: 1.8em;" class="is-text-dark">
               {{ $t("taw.featuresText") }}
             </p>
           </div>
@@ -282,6 +283,7 @@ export default {
   },
   data() {
     return {
+      loading: true,
       icons: {
         bxlTwitch,
         bxlInstagram,
@@ -409,7 +411,7 @@ export default {
         scrollTrigger: {
           scrub: 0.5,
           trigger: "#taw-3",
-          start: "center bottom",
+          start: "top bottom",
           end: "center center",
         },
       }

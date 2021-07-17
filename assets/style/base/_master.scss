@@ -1,12 +1,13 @@
 // @import "normalize-scss";
 // @import "./_theme.scss";
+// @import url("https://weloveiconfonts.com/api/?family=entypo");
+
+// /* entypo */
+// [class*="entypo-"]:before {
+//   font-family: "entypo", sans-serif;
+// }
 
 @include normalize();
-
-// * {
-//   scrollbar-width: thin;
-//   scrollbar-color: $gray-darker1, $gray-lighter;
-// }
 
 * {
   box-sizing: border-box;
