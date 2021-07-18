@@ -37,6 +37,8 @@ export default {
     ],
   },
 
+  //loading: "~/components/loading.vue",
+
   // router: {
   //   mode: "hash",
   // },

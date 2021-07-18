@@ -19,6 +19,8 @@
     "three": "^0.126.1"
   },
   "devDependencies": {
+    "@iconify-icons/entypo": "^1.1.0",
+    "@iconify-icons/entypo-social": "^1.1.0",
     "@iconify/icons-bx": "^1.0.5",
     "@iconify/icons-openmoji": "^1.0.69",
     "@iconify/vue": "^1.0.5",
