@@ -3,7 +3,7 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-item">
-          <ul class="horizontal-list">
+          <ul class="links">
             <li>
               <nuxt-link :to="localePath('/about')">{{
                 $t("footer.about")
@@ -20,50 +20,64 @@
           <div class="link-row justify-center">
             <a
               class="is-text-dark"
-              target="blank"
+              target="_blank"
               href="https://www.instagram.com/takeawalkgame/"
-              ><IconifyIcon height="32" :icon="icons.bxlInstagram"
-            /></a>
-            <a class="is-text-dark" href=""
-              ><IconifyIcon height="32" :icon="icons.bxlFacebook"
-            /></a>
-
-            <a class="is-text-dark" href=""
-              ><IconifyIcon height="32" :icon="icons.bxlPlayStore"
-            /></a>
-          </div>
-          <div class="text-small faded">
-            WEB by
-            <a target="_blank" href="http://mikeska.design">mikeska.design</a>
+            >
+              <span
+                class="iconify"
+                data-icon="bx:bxl-instagram"
+                data-inline="false"
+                data-width="32px"
+                data-height="32px"
+              ></span>
+            </a>
+            <!-- <a class="is-text-dark" href="">
+              <span
+                class="iconify"
+                data-icon="bx:bxl-facebook-circle"
+                data-inline="false"
+                data-width="32px"
+                data-height="32px"
+              ></span>
+            </a> -->
+            <a class="is-text-dark" href="">
+              <span
+                class="iconify"
+                data-icon="bx:bxl-play-store"
+                data-inline="false"
+                data-width="32px"
+                data-height="32px"
+              ></span>
+            </a>
           </div>
         </div>
-        <span class="footer-item"
-          >&copy; {{ new Date().getFullYear() }} {{ $t("footer.copy") }}</span
-        >
+        <div class="footer-item" style="align-items: flex-end;">
+          <span style="margin-bottom: 0.5rem;">
+            &copy; {{ new Date().getFullYear() }} {{ $t("footer.copy") }}
+          </span>
+          <span class="text-small faded">
+            Designed by
+            <a
+              target="_blank"
+              title="http://mikeska.design"
+              href="http://mikeska.design"
+            >
+              Silvestr Mikeska
+            </a>
+          </span>
+        </div>
       </div>
     </div>
   </footer>
 </template>
 
 <script>
-import IconifyIcon from "@iconify/vue"
-import bxlFacebook from "@iconify/icons-bx/bxl-facebook-square"
-import bxlInstagram from "@iconify/icons-bx/bxl-instagram"
-import bxlPlayStore from "@iconify/icons-bx/bxl-play-store"
 export default {
-  components: {
-    IconifyIcon,
-  },
+  components: {},
   data() {
-    return {
-      icons: {
-        bxlFacebook,
-        bxlInstagram,
-        bxlPlayStore,
-      },
-    }
+    return {}
   },
 }
 </script>
 
-<style></style>
+<style scoped></style>

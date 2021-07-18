@@ -5,7 +5,7 @@
         <div style="justify-self: start;" class="nav-section">
           <!-- <router-link class="nav-item" :to="localePath('/')">Logo</router-link> -->
           <transition name="fade">
-            <div v-if="$nuxt.layoutName == 'default'" class="nav-item">
+            <div v-if="$nuxt.layoutName == 'default'" class="nav-item logo">
               <span style="font-size: 1.1em;">{{
                 $t("homepage.siteName")
               }}</span>
@@ -85,6 +85,14 @@ export default {
 
   &:hover {
     background-color: hsla(0, 0%, 40%, 0.9);
+  }
+}
+
+// Hides utt heading on small screens
+.logo {
+  display: none;
+  @include break($mobile) {
+    display: block;
   }
 }
 

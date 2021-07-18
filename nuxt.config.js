@@ -64,6 +64,7 @@ export default {
    ** Nuxt.js modules
    */
   modules: ["@nuxtjs/style-resources", "nuxt-i18n"],
+  buildModules: ["nuxt-purge-icons-module"],
   styleResources: {
     scss: [
       "normalize-scss",
@@ -76,6 +77,7 @@ export default {
       "~assets/style/components/_button.scss",
       "~assets/style/components/_card.scss",
       "~assets/style/components/_media.scss",
+      "~assets/style/components/_form.scss",
       "~assets/style/main.scss",
       "~assets/style/base/_modifiers.scss",
     ],
@@ -94,6 +96,10 @@ export default {
     // detectBrowserLanguage: {
     //   useCookie: false,
     // },
+  },
+
+  purgeIcons: {
+    /* PurgeIcons Options */
   },
   /*
    ** Build configuration

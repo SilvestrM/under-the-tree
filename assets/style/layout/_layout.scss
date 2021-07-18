@@ -73,6 +73,21 @@ section {
 //   opacity: 0;
 // }
 
+.content {
+  align-self: flex-start;
+  justify-self: center;
+  width: clamp(10rem, 100%, 125ch);
+  padding-bottom: 5rem;
+
+  @include break($mobile) {
+    align-self: center;
+  }
+
+  @include break($tablet) {
+    justify-self: flex-start;
+  }
+}
+
 .cols {
   box-sizing: border-box;
   width: 100%;

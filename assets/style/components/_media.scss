@@ -1,4 +1,8 @@
 .image-wrapper {
+  &.is-rounded :is(img, video) {
+    border-radius: $global-radius;
+  }
+
   img,
   video {
     display: block;

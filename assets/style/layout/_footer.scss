@@ -4,6 +4,8 @@ footer {
   min-height: $footer-height;
   width: 100%;
   background-color: $gray-darker2;
+  background: linear-gradient(0deg, #3b564a -0.88%, #515151 100%);
+  border-top: 2px solid $white-ish;
 
   .footer-content {
     color: $gray-light;
@@ -16,9 +18,32 @@ footer {
     }
     align-items: center;
     .footer-item {
+      display: flex;
+      flex-direction: column;
+      .links {
+        font-size: 0.9em;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: inline-flex;
+
+        li {
+          margin: 0.5rem 0.5rem 0.5rem 0;
+        }
+
+        @include break($mobile) {
+          display: unset;
+        }
+      }
+
       a {
         color: $gray-light;
-        text-decoration: underline;
+        //text-decoration: underline;
+        transition: all $tspeed;
+        &:hover {
+          transition: all $tspeed;
+          color: darken($gray-light, 10%);
+        }
       }
       padding: $spacing0;
       justify-self: center;

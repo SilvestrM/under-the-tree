@@ -49,20 +49,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.content {
-  align-self: flex-start;
-  justify-self: center;
-  width: clamp(10rem, 100%, 125ch);
-  padding-bottom: 5rem;
+//moved to layout
+// .content {
+//   align-self: flex-start;
+//   justify-self: center;
+//   width: clamp(10rem, 100%, 125ch);
+//   padding-bottom: 5rem;
 
-  @include break($mobile) {
-    align-self: center;
-  }
+//   @include break($mobile) {
+//     align-self: center;
+//   }
 
-  @include break($tablet) {
-    justify-self: flex-start;
-  }
-}
+//   @include break($tablet) {
+//     justify-self: flex-start;
+//   }
+// }
 
 .cols-grid {
   padding-top: 1rem;

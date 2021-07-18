@@ -18,6 +18,8 @@ export default {
 
   general: {
     back: "Back",
+    name: "Name",
+    email: "Email",
   },
 
   people: {
@@ -52,6 +54,12 @@ export default {
     why: "Proč zrovna Under the Tree?",
     p2: `Po dlouhém hledání libozvučného a výstižného jména, jednou Micciho při koukání do korun stromů napadlo "Proč prostě se nepojmenovat Under The Tree? Stejně máme rádi přirodu".`,
     members: "Kdo je součástí",
+  },
+  contact: {
+    message:
+      "Pokud máte nějaký dotaz, připomínku nebo nám jen chcete něco jiného zdělit, neváhejte a napište nám pomocí formuláře níže.",
+    messageAreaTitle: "Vaše zpráva",
+    send: "Odešlete zprávu",
   },
   taw: {
     gameName: "Take a Walk",

@@ -121,7 +121,7 @@
         </div>
         <div id="staggered-cols" class="grid-cols is-m-center">
           <div class="col third is-text-dark stag-anim">
-            <figure class="image-wrapper">
+            <figure class="image-wrapper is-rounded">
               <video autoplay loop muted playsinline>
                 <source
                   src="~/assets/videos/taw/rsz_jump.mp4"
@@ -142,7 +142,7 @@
             </p>
           </div>
           <div class="col third is-text-dark stag-anim">
-            <figure class="image-wrapper">
+            <figure class="image-wrapper is-rounded">
               <video autoplay loop muted playsinline>
                 <source
                   src="~/assets/videos/taw/rsz_puzzle.mp4"
@@ -163,7 +163,7 @@
             </p>
           </div>
           <div class="col third is-text-dark stag-anim">
-            <figure class="image-wrapper">
+            <figure class="image-wrapper is-rounded">
               <video autoplay loop muted playsinline>
                 <source
                   src="~/assets/videos/taw/rsz_story.mp4"
@@ -190,8 +190,8 @@
           class="cols align-center justify-center"
         >
           <div class="col full is-text-dark align-center">
-            <p style="font-size: 1.8em;" class="is-text-dark">
-              {{ $t("taw.featuresText") }}
+            <p style="font-size: 1.8em; max-width: 40ch;" class="is-text-dark">
+              <em>{{ $t("taw.featuresText") }}</em>
             </p>
           </div>
         </div>
@@ -653,6 +653,10 @@ export default {
     letter-spacing: 0.05em;
   }
 
+  iframe {
+    border-radius: $global-radius;
+  }
+
   .jumbo-content {
     justify-content: flex-start;
     .heading {
@@ -674,7 +678,9 @@ export default {
     background: url("~assets/images/taw/bg04.png") center 60% / 100% 90%
       no-repeat;
   }
+
   #taw-2-1 {
+    min-height: 1000px;
     display: flex;
     flex-direction: column;
     // &:before {
@@ -776,22 +782,30 @@ export default {
 
   .jumbo-content {
     padding: 8rem $spacing1;
-    background: url("~assets/images/taw/boardsign_paper.png") center / contain
+    background: url("~assets/images/taw/boardsign_paper.png") center / 120% 50%
       no-repeat;
     > * {
       margin: $spacing0 0;
     }
     @include break($tablet) {
       padding: 8rem;
+      background-size: contain;
     }
   }
 }
 #taw-5 {
   // height: 150vh;
   background: url("~assets/images/taw/sanctuary_mountain01-dark.png") center
-      bottom / 100% 70% no-repeat,
-    url("~assets/images/taw/checkpoint.png") right 15% bottom -10% / 15% 40% no-repeat,
+      bottom / 150% 70% no-repeat,
+    url("~assets/images/taw/checkpoint.png") right 5% bottom 0% / 30% 40%
+      no-repeat,
     url("~assets/images/taw/bg05dark2.png") center bottom / 100% 40% no-repeat;
+  @include break($mobile) {
+    background: url("~assets/images/taw/sanctuary_mountain01-dark.png") center
+        bottom / 100% 80% no-repeat,
+      url("~assets/images/taw/checkpoint.png") right 10% bottom -10% / 15% 40% no-repeat,
+      url("~assets/images/taw/bg05dark2.png") center bottom / 100% 40% no-repeat;
+  }
   @include break($tablet) {
     background: url("~assets/images/taw/sanctuary_mountain01-dark.png") center
         bottom / 80% 80% no-repeat,
